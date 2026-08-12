@@ -1,27 +1,19 @@
-import Logo from "./Logo"
-import Categories from "./Categories"
-    import SearchBox from "./SearchBox"
-    import Hotline from "./Hotline"
-    import Language from "./Language"
-    import Currency from "./Currency"
-function Header() {
+import Logo from "./Logo";
+import Categories from "./Categories";
+import SearchBox from "./SearchBox";
+const Navbar = () => {
   return (
-    <header className="w-full bg-white">
-      
-      <div className="mx-auto flex h-[90px] items-center px-[70px]">
-        
-        <Logo />
-         <Categories />
-         <SearchBox/>
-        <Hotline />
-        <Language />
-        <Currency />
-     
-
+    <nav className="w-full bg-white">
+      <div className="max-w-7xl mx-auto h-20 px4 flex items-center gap-17">
+        <div className="flex items-center gap-8">
+          <Logo />
+        </div>
+        <div className="flex items-center ">
+          <Categories />
+          <SearchBox />
+        </div>
       </div>
-
-    </header>
-  )
-}
-
-export default Header
+    </nav>
+  );
+};
+export default Navbar;
