@@ -21,8 +21,8 @@ const Categories = () => {
 
   
   return (
-    <div ref={dropdownRef} className="relative">
-      <button onClick={() => setOpen(!open)} className="w-56 h-12 border border-gray-300 rounded-l-full px-5 flex items-center justify-between">
+    <div ref={dropdownRef} className="relative ">
+      <button onClick={() => setOpen(!open)} className="w-56 h-12 border border-gray-300 rounded-l-full px-5 flex items-center justify-between cursor-pointer">
         <span>All Categories</span>
         
          <span>{open ? "▲" : "▼"}</span>
