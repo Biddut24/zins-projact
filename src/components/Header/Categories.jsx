@@ -1,9 +1,27 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Categories = () => {
   const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+     if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target)
+        ) {
+      setOpen(false);
+    } 
+  };
+    document.addEventListener("click", handleClickOutside);
+     return () => {
+    document.removeEventListener("click", handleClickOutside);
+  };
+}, []);
+  
+
+  
   return (
-    <div className="relative">
+    <div ref={dropdownRef} className="relative">
       <button onClick={() => setOpen(!open)} className="w-56 h-12 border border-gray-300 rounded-l-full px-5 flex items-center justify-between">
         <span>All Categories</span>
         

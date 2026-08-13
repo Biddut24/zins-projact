@@ -1,10 +1,26 @@
-import { useState } from "react"
+import { useState,useEffect, useRef } from "react"
 
 function Language() {
   const [open, setOpen] = useState(false)
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+     if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target)
+        ) {
+      setOpen(false);
+    } 
+  };
+    document.addEventListener("click", handleClickOutside);
+     return () => {
+    document.removeEventListener("click", handleClickOutside);
+  };
+}, []);
 
   return (
-    <div className="relative ml-7">
+    <div ref={dropdownRef}  className="relative ml-7">
 
       <button
         onClick={() => setOpen(!open)}
@@ -12,9 +28,7 @@ function Language() {
       >
         <span>English</span>
 
-        <span className="text-xs">
-          ▼
-        </span>
+         <span>{open ? "▲" : "▼"}</span>
       </button>
 
       {open && (

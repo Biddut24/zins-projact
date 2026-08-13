@@ -1,27 +1,22 @@
-function Hotline() {
+import { PhoneCall } from "lucide-react";
+const Hotline = () => {
   return (
-    <div className="ml-8 flex items-center gap-3">
-
-      {/* Phone Icon */}
-      <div className="flex h-[42px] w-[42px] items-center justify-center rounded-full border border-gray-200">
-        <span className="text-lg">
-          ☎
-        </span>
+    <div className="flex items-center gap-3 cursor-pointer group">
+      <div className="w-10 h-10 border border-gray-300 rounded-full flex items-center justify-center">
+        <PhoneCall className="w-5 h-5 group-hover:text-orange-500 duration-300"size={16} />
       </div>
 
-      {/* Hotline Text */}
-      <div className="flex flex-col">
-        <span className="text-sm text-gray-500">
-          Hotline:
-        </span>
+     <div className="flex items-center gap-2 whitespace-nowrap">
+       <p className="text-sm text-gray-500 group-hover:text-orange-500 duration-300">
+        
+        </p>
 
-        <span className="text-sm font-bold text-gray-900">
+        <h3 className="text-lg font-bold group-hover:text-orange-500 duration-300">
           +(402) 763 282 46
-        </span>
+        </h3>
       </div>
-
     </div>
-  )
-}
+  );
+};
 
-export default Hotline
+export default Hotline;

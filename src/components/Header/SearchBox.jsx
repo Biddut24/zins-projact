@@ -1,7 +1,7 @@
 import { Search } from "lucide-react";
 const SearchBox = () => {
   return (
-    <div className="w-[450px] h-12 border border-gray-300 rounded-r-full flex items-center overflow-hidden">
+    <div className="w-[420px] h-12 border border-gray-300 rounded-r-full flex items-center overflow-hidden">
       <input
         type="text"
         placeholder="Search your product..."
